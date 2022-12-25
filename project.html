@@ -14,19 +14,8 @@
     integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous">
     <link rel="icon" href="logo.jpg" type="image/jpg" sizes="16x16">
   <title>Saeeam, world!</title>
-  <script src="index.js"></script>
+<link rel="stylesheet" href="style.css">
 
-  <style>
-    .bg-1 {
-      background-color: #1abc9c;
-      color: #ffffff;
-    }
-
-    .container-fluid {
-      padding-top: 70px;
-      padding-bottom: 70px;
-    }
-  </style>
 </head>
 
 <body>
@@ -42,13 +31,12 @@
       </a>
 
       <ul class="nav nav-pills">
-        <li class="nav-item"><a href="#" class="nav-link" style='color:white; background: black;' aria-current="page">Home</a></li>
+        <li class="nav-item"><a href="/" class="nav-link" style='color:white; background: black;' aria-current="page">Home</a></li>
         <li class="nav-item"><a href="project.html" class="nav-link" style='color:black'>Project</a></li>
         <li class="nav-item"><a href="class.html" class="nav-link" style='color:black'>Education</a></li>
-        <li class="nav-item"><a href="#document" class="nav-link" style='color:black'>Document</a></li>
-        <li class="nav-item"><a href="#Join" class="nav-link" style='color:black'>Join Us</a></li>
-        <li class="nav-item"><a href="#about" class="nav-link" style='color:black'>About</a></li>
-        <li class="nav-item"><a href="#contact" class="nav-link" style='color:black'>Contact</a></li>
+        <li class="nav-item"><a href="/#Join" class="nav-link" style='color:black'>Join Us</a></li>
+        <li class="nav-item"><a href="/#about" class="nav-link" style='color:black'>About</a></li>
+        <li class="nav-item"><a href="/#contact" class="nav-link" style='color:black'>Contact</a></li>
       </ul>
     </header>
 
@@ -78,8 +66,9 @@
     <div class="p-5 mb-4 rounded-3">
         <h3 class="display-7 fw-bold text-center">SaeeAM Projects - <code>SaeeAM के साथ Projects Karo</code>  </h3>
 
-        <p class="text-center">Comming Soon</p>
+        <!-- <p class="text-center">Comming Soon</p> -->
 
+        <table class="table"></table>
         
     </div>
    
@@ -109,6 +98,24 @@
     </div>
 
     <hr>
+
+    <hr>
+    <div class="container">
+      <h2>SaeeAM  <code>Success</code>  Projects</h2>
+       <section class="customer-logos slider">
+          <div class="slide"><a href="http://" target="_blank" rel="noopener noreferrer"><img src="project1.jpg">1</a></div>
+          <div class="slide"><a href="http://" target="_blank" rel="noopener noreferrer"><img src="project2.jpg">2</a></div>
+          <div class="slide"><a href="http://" target="_blank" rel="noopener noreferrer"><img src="project3.jpg">3</a></div>
+          <div class="slide"><a href="http://" target="_blank" rel="noopener noreferrer"><img src="project4.jpg">4</a></div>
+          <div class="slide"><a href="http://" target="_blank" rel="noopener noreferrer"><img src="project5.jpg">5</a></div>
+          <div class="slide"><a href="http://" target="_blank" rel="noopener noreferrer"><img src="project6.jpg">6</a></div>
+          <div class="slide"><a href="http://" target="_blank" rel="noopener noreferrer"><img src="project7.jpg">7</a></div>
+          <div class="slide"><a href="http://" target="_blank" rel="noopener noreferrer"><img src="project8.jpg">8</a></div>
+          <div class="slide"><a href="http://" target="_blank" rel="noopener noreferrer"><img src="project9.jpg">9</a></div>
+       </section>
+       
+    </div>
+    <hr>
    
     <div id="about" class="container-fluid bg-1 text-center">
       <h3>Who Am I?</h3>
@@ -137,6 +144,7 @@
 
     
 
+    
     <div id="contact" class="container p-5 mt-4 mb-4 bg-light shadow rounded-3">
       <h3 class="text-center">Contact</h3>
       <p class="text-center"><em>We love our fans!</em></p>
@@ -148,31 +156,34 @@
           <p><span class="glyphicon glyphicon-envelope"><i class='fas fa-mail-bulk' style='font-size:24px;color:black'></i></span>Email Me: <a href="https://mail.google.com/mail/u/3/#inbox?compose=new" target="_blanks">Click Here</a></p>
         </div>
         <div class="col-md-8">
-           <div class="form">
-            <form action="/action_page.php">
+           <form>
+              <div id="form">
                 <div class="form-group">
                     <label for="pwd">Name</label>
-                    <input type="text" class="form-control" id="msg">
+                    <input type="text" name="name" class="form-control" id="msg" required>
                   </div>
-
+                  <div class="form-group">
+                    <label for="email">Mobile</label>
+                    <input type="number" name="mobile" class="form-control" id="email" required>
+                  </div>
                 <div class="form-group">
                   <label for="email">Email address:</label>
-                  <input type="email" class="form-control" id="email">
+                  <input type="email" name="email" class="form-control" id="email" required>
                 </div>
                 
                 <div class="form-group">
                   <label for="pwd">Message</label>
-                  <textarea type="text" class="form-control" id="msg"> </textarea>
+                  <textarea type="text" name="msg" class="form-control" id="msg" required> </textarea>
 
                 </div>
-                <div class="text-center mt-4">
-                <button type="submit" class="btn btn-primary">Submit</button>
+
+                <div class="text-center mt-4"> 
+                  <input type="submit" class="btn btn-outline-success" id="sub" value="Submit" />
                 </div>
-              </form>
-        </div>
-        
-    
-      
+              </div>
+            </form>
+
+
 
       </div>
     </div>
@@ -196,9 +207,11 @@
       </div>
 
       <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-        <li class="ms-3"><a class="text-muted" href="https://saeeam.business.site/?m=true" target="_blanks"><i class='fab fa-google-plus' style='font-size:24px;color:black'></i></a></li>
-        <li class="ms-3"><a class="text-muted" href="#"><i class='fab fa-facebook' style='font-size:24px;color:black'></i></a></li>
-        <li class="ms-3"><a class="text-muted" href="#"><i class='fab fa-instagram' style='font-size:24px;color:black'></i></a></li>
+        <li class="ms-3"><a class="text-muted" target="_blank" href="https://saeeam.business.site/?m=true" target="_blanks"><i class='fab fa-google-plus' style='font-size:24px;color:black'></i></a></li>
+        <li class="ms-3"><a class="text-muted" target="_blank" href="https://www.facebook.com/SaeeAMstartup"><i class='fab fa-facebook' style='font-size:24px;color:black'></i></a></li>
+        <li class="ms-3"><a class="text-muted" target="_blank" href="https://www.instagram.com/saeeamstartup/"><i class='fab fa-instagram' style='font-size:24px;color:black'></i></a></li>
+        <li class="ms-3"><a class="text-muted" target="_blank" href="https://www.linkedin.com/in/saeeam-startup-17ba21247/"><i class='fab fa-linkedin' style='font-size:24px;color:black'></i></a></li>
+        <li class="ms-3"><a class="text-muted" target="_blank" href="https://www.youtube.com/channel/UCNfYdNva6gCCqq5mdIKHnTw"><i class='fab fa-youtube' style='font-size:24px;color:black'></i></a></li>
       </ul>
     </footer>
   </div>
@@ -211,6 +224,9 @@
 
 
     <script src="https://kit.fontawesome.com/cdb4a89ab9.js" crossorigin="anonymous"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/slick-carousel/1.6.0/slick.js"></script>
+
+    <script src="script.js"></script>
 
 
 </body>
