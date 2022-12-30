@@ -1,13 +1,78 @@
-fetch('https://script.google.com/macros/s/AKfycbxyLFEAmw7-tFzLR9pSQQefY_jIORiAe7txlzxU9zSLTVWDQWtH3409yq1k9KZxbJnM/exec')
-            .then(res => res.json())
-            .then(data => {
-                let tr = data.content.reduce((prev, cur) => {
-                    let td = cur.map(e => `<td>${e}</td>`)
-                    return prev + `<tr>${td.join("")}</tr>`
-                }, "\r")
-                document.querySelector("table").innerHTML = tr;
- });
+const api_url =
+"https://script.google.com/macros/s/AKfycbxyLFEAmw7-tFzLR9pSQQefY_jIORiAe7txlzxU9zSLTVWDQWtH3409yq1k9KZxbJnM/exec";
 
+// Defining async function
+async function classapi(url) {
+
+// Storing response
+const response = await fetch(url);
+
+// Storing data in form of JSON
+var data = await response.json();
+
+classdatashow(data);
+}
+
+// Defining async function
+async function projectapi(url) {
+
+// Storing response
+const response = await fetch(url);
+
+// Storing data in form of JSON
+var data = await response.json();
+
+projectdatashow(data);
+}
+
+// Calling that async function
+classapi(api_url);
+projectapi(api_url);
+
+
+// Function to define innerHTML for HTML table
+function classdatashow(data) {
+let tab =
+    ``;
+
+
+// Loop to access all rows
+for (let r of data.content) {
+    tab += `
+    <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                       
+                  
+    <div class="card">
+                   
+                <a href="${r[1]}" target="_blank" class="btn btn-primary">${r[0]}</a>
+                      
+                      
+                </div> </div>`;
+}
+// Setting innerHTML as tab variable
+document.querySelector("#classdata").innerHTML = tab;
+}
+
+function projectdatashow(data) {
+    let tab =
+        ``;
+        
+    // Loop to access all rows
+    for (let r of data.content) {
+        tab += `
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                           
+                      
+        <div class="card">
+                       
+                    <a href="${r[3]}" target="_blank" class="btn btn-primary">${r[2]}</a>
+                          
+                          
+                    </div> </div>`;
+    }
+    // Setting innerHTML as tab variable
+    document.querySelector("#prodata").innerHTML = tab;
+    };
 
 
  let form = document.querySelector("form");
