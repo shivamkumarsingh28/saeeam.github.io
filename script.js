@@ -72,7 +72,7 @@ function projectdatashow(data) {
                       
         <div class="card">
                        
-                    <a href="${r[3]}" target="_blank" class="${r[0].slice(0,17)}">${r[2].slice(17)}</a>
+                    <a href="${r[3]}" target="_blank" class="${r[2].slice(0,17)}">${r[2].slice(17)}</a>
                           
                           
                     </div> </div>`;
