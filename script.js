@@ -25,9 +25,21 @@ var data = await response.json();
 projectdatashow(data);
 }
 
+async function latestprojectapi(url) {
+
+// Storing response
+const response = await fetch(url);
+
+// Storing data in form of JSON
+var data = await response.json();
+
+latestprodatashow(data);
+}
+
 // Calling that async function
 classapi(api_url);
 projectapi(api_url);
+latestprojectapi(api_urls);
 
 
 // Function to define innerHTML for HTML table
@@ -72,6 +84,28 @@ function projectdatashow(data) {
     }
     // Setting innerHTML as tab variable
     document.querySelector("#prodata").innerHTML = tab;
+    };
+
+
+function latestprodatashow(data) {
+    let tab =
+        ``;
+        
+    // Loop to access all rows
+    for (let r of data.content) {
+        tab += `
+        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
+                           
+                      
+        <div class="card">
+                       
+                    <a href="${r[5]}" target="_blank" class="btn btn-primary">${r[4]}</a>
+                          
+                          
+                    </div> </div>`;
+    }
+    // Setting innerHTML as tab variable
+    document.querySelector("#latestprodata").innerHTML = tab;
     };
 
 
