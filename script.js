@@ -11,7 +11,7 @@ const response = await fetch(url);
 var data = await response.json();
 
 classdatashow(data);
-}
+};
 
 async function latestclassapi(url) {
 
@@ -22,7 +22,7 @@ const response = await fetch(url);
 var data = await response.json();
 
 latestclassdatashow(data);
-}
+};
 
 
 // Defining async function
@@ -35,7 +35,7 @@ const response = await fetch(url);
 var data = await response.json();
 
 projectdatashow(data);
-}
+};
 
 async function latestprojectapi(url) {
 
@@ -46,7 +46,7 @@ const response = await fetch(url);
 var data = await response.json();
 
 latestprodatashow(data);
-}
+};
 
 // Calling that async function
 classapi(api_url);
@@ -75,7 +75,7 @@ for (let r of data.content) {
 }
 // Setting innerHTML as tab variable
 document.querySelector("#classdata").innerHTML = tab;
-}
+};
 
 function latestclassdatashow(data) {
 let tab =
@@ -97,7 +97,7 @@ for (let r of data.content) {
 }
 // Setting innerHTML as tab variable
 document.querySelector("#latestclassdata").innerHTML = tab;
-}
+};
 
 function projectdatashow(data) {
     let tab =
