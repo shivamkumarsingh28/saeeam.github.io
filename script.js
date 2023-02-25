@@ -49,7 +49,7 @@ for (let r of data.content) {
                   
     <div class="card">
                    
-                <a href="${r[1]}" target="_blank" class="btn btn-primary">${r[0]}</a>
+                <a href="${r[1]}" target="_blank" class="${r[0].slice(0,17)}">${r[0].slice(17)}</a>
                       
                       
                 </div> </div>`;
@@ -72,7 +72,7 @@ function projectdatashow(data) {
                       
         <div class="card">
                        
-                    <a href="${r[3]}" target="_blank" class="btn btn-primary">${r[2]}</a>
+                    <a href="${r[3]}" target="_blank" class="${r[0].slice(0,17)}">${r[2].slice(17)}</a>
                           
                           
                     </div> </div>`;
