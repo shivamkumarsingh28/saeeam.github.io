@@ -13,16 +13,7 @@ var data = await response.json();
 classdatashow(data);
 };
 
-async function latestclassapi(url) {
 
-// Storing response
-const response = await fetch(url);
-
-// Storing data in form of JSON
-var data = await response.json();
-
-latestclassdatashow(data);
-};
 
 
 // Defining async function
@@ -37,22 +28,12 @@ var data = await response.json();
 projectdatashow(data);
 };
 
-async function latestprojectapi(url) {
 
-// Storing response
-const response = await fetch(url);
-
-// Storing data in form of JSON
-var data = await response.json();
-
-latestprodatashow(data);
-};
 
 // Calling that async function
 classapi(api_url);
 projectapi(api_url);
-latestprojectapi(api_urls);
-latestclassapi(api_urls);
+
 
 // Function to define innerHTML for HTML table
 function classdatashow(data) {
@@ -77,27 +58,7 @@ for (let r of data.content) {
 document.querySelector("#classdata").innerHTML = tab;
 };
 
-function latestclassdatashow(data) {
-let tab =
-    ``;
 
-
-// Loop to access all rows
-for (let r of data.content) {
-    tab += `
-    <div class="col-12 col-sm-8 col-md-6 col-lg-4">
-                       
-                  
-    <div class="card">
-                   
-                <a href="${r[3]}" target="_blank" class="btn btn-primary">${r[2]}</a>
-                      
-                      
-                </div> </div>`;
-}
-// Setting innerHTML as tab variable
-document.querySelector("#latestclassdata").innerHTML = tab;
-};
 
 function projectdatashow(data) {
     let tab =
@@ -111,7 +72,7 @@ function projectdatashow(data) {
                       
         <div class="card">
                        
-                    <a href="${r[5]}" target="_blank" class="btn btn-primary">${r[4]}</a>
+                    <a href="${r[3]}" target="_blank" class="btn btn-primary">${r[2]}</a>
                           
                           
                     </div> </div>`;
@@ -120,27 +81,6 @@ function projectdatashow(data) {
     document.querySelector("#prodata").innerHTML = tab;
     };
 
-
-function latestprodatashow(data) {
-    let tab =
-        ``;
-        
-    // Loop to access all rows
-    for (let r of data.content) {
-        tab += `
-        <div class="col-12 col-sm-8 col-md-6 col-lg-4">
-                           
-                      
-        <div class="card">
-                       
-                    <a href="${r[7]}" target="_blank" class="btn btn-primary">${r[6]}</a>
-                          
-                          
-                    </div> </div>`;
-    }
-    // Setting innerHTML as tab variable
-    document.querySelector("#latestprodata").innerHTML = tab;
-    };
 
 
  let form = document.querySelector("form");
